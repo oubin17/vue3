@@ -13,6 +13,15 @@ import Vref_2 from "./components/Vref-2.vue"
 
 import VCom from "./components/VComputed.vue"
 
+import VProps from "./components/props/VProps.vue"
+const propsLikes = 123
+
+function callback () {
+  console.log('收到子组件传过来的事件')
+}
+function callback2 (params1) {
+  console.log('收到子组件传过来的事件，参数' + params1)
+}
 </script>
 
 <template>
@@ -38,7 +47,14 @@ import VCom from "./components/VComputed.vue"
   <!-- <Vref_2 /> -->
 
   <!-- computed -->
-  <VCom />
+  <!-- <VCom /> -->
+
+  <VFullRegist />
+
+
+  <!-- props -->
+  <!-- 如果需要动态绑定，可以用v-bind -->
+  <VProps title="父传子" :likes="propsLikes" @click-event="callback" @click-event-with-params="callback2" />
 </template>
 
 <style scoped></style>

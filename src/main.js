@@ -3,4 +3,11 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+import VFullRegist from './components/fullregist/VFullRegist.vue'
+
+const app = createApp(App)
+
+// 全局注册组件
+app.component('VFullRegist', VFullRegist)
+
+app.mount('#app')
