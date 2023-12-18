@@ -25,6 +25,7 @@ function callback2 (params1) {
 
 import Vprovide from "./components/provideinject/Vprovide.vue"
 
+import Vcomposable from "./components/composable/Vcomposable.vue"
 </script>
 
 <template>
@@ -61,7 +62,10 @@ import Vprovide from "./components/provideinject/Vprovide.vue"
 
 
   <!-- 依赖注入 -->
-  <Vprovide />
+  <!-- <Vprovide /> -->
+
+  <!-- 组合式函数 -->
+  <Vcomposable />
 </template>
 
 <style scoped></style>
