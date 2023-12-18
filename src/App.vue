@@ -22,6 +22,9 @@ function callback () {
 function callback2 (params1) {
   console.log('收到子组件传过来的事件，参数' + params1)
 }
+
+import Vprovide from "./components/provideinject/Vprovide.vue"
+
 </script>
 
 <template>
@@ -49,12 +52,16 @@ function callback2 (params1) {
   <!-- computed -->
   <!-- <VCom /> -->
 
-  <VFullRegist />
+  <!-- <VFullRegist /> -->
 
 
   <!-- props -->
   <!-- 如果需要动态绑定，可以用v-bind -->
-  <VProps title="父传子" :likes="propsLikes" @click-event="callback" @click-event-with-params="callback2" />
+  <!-- <VProps title="父传子" :likes="propsLikes" @click-event="callback" @click-event-with-params="callback2" /> -->
+
+
+  <!-- 依赖注入 -->
+  <Vprovide />
 </template>
 
 <style scoped></style>
