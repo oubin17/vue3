@@ -26,6 +26,8 @@ function callback2 (params1) {
 import Vprovide from "./components/provideinject/Vprovide.vue"
 
 import Vcomposable from "./components/composable/Vcomposable.vue"
+
+import VAxios from "./components/VAxios.vue"
 </script>
 
 <template>
@@ -65,7 +67,10 @@ import Vcomposable from "./components/composable/Vcomposable.vue"
   <!-- <Vprovide /> -->
 
   <!-- 组合式函数 -->
-  <Vcomposable />
+  <!-- <Vcomposable /> -->
+
+  <!-- 测试axios -->
+  <VAxios />
 </template>
 
 <style scoped></style>
