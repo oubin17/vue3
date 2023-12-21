@@ -1,30 +1,27 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 
-import axios from 'axios'
+// import axios from 'axios'
+import axiosUtil from '@/js/axiosUtil';
 
-const list = ref({})
+const result1 = ref(0)
+const result2 = ref({})
 
 const getList = async () => {
-  // http://localhost:8080/hello
-  axios.get('/template/hello').then(function (res) {
-    console.log(res)
-    list.value = res
-  }).catch(function (error) {
-    console.log(error)
-  })
 
-  // const res = await axios.get('/hello')
-  // console.log(res)
-  // list.value = res.data
+  result1.value = await axiosUtil.get('/template/hello')
+  console.log(result1)
+
+  result2.value = await axiosUtil.post('/template/hello', { 'name': '1' })
+  console.log(result2)
+
 }
 onMounted(() => getList())
-
-console.log(list)
 </script>
 
 <template>
-  <div>获取到的对象： {{ list }}</div>
+  <div>获取到的对象result1： {{ result1.result }}</div>
+  <div>获取到的对象result2： {{ result2.result }}</div>
 </template>
 
 <style></style>
