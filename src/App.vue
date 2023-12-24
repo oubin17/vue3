@@ -14,7 +14,13 @@ import Vref_2 from "./components/Vref-2.vue"
 import VCom from "./components/VComputed.vue"
 
 import VProps from "./components/props/VProps.vue"
+import { ref } from 'vue'
 const propsLikes = 123
+
+const propsRef = ref(100)
+setTimeout(() => {
+  propsRef.value = 200
+}, 3000)
 
 function callback () {
   console.log('收到子组件传过来的事件')
@@ -59,8 +65,9 @@ import VAxios from "./components/VAxios.vue"
 
 
   <!-- props -->
-  <!-- 如果需要动态绑定，可以用v-bind -->
-  <!-- <VProps title="父传子" :likes="propsLikes" @click-event="callback" @click-event-with-params="callback2" /> -->
+  <!-- 如果需要动态绑定，可以用v-bind，加上:，可以做到响应式绑定 -->
+  <VProps title="父传子" :propsRef="propsRef" :likes="propsLikes" @click-event="callback"
+    @click-event-with-params="callback2" />
 
 
   <!-- 依赖注入 -->
@@ -70,7 +77,7 @@ import VAxios from "./components/VAxios.vue"
   <!-- <Vcomposable /> -->
 
   <!-- 测试axios -->
-  <VAxios />
+  <!-- <VAxios /> -->
 </template>
 
 <style scoped></style>

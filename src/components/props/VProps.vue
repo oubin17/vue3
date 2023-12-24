@@ -8,6 +8,8 @@ const props = defineProps({
     type: String,
     required: true
   },
+  propsRef: Number,
+
   likes: Number,
   defaultValue: {
     type: String,
@@ -43,6 +45,8 @@ const sonTitle = ref(props.title)
   <button @click="$emit('clickEvent')">子传父</button>
   <button @click="$emit('clickEventWithParams', '参数1')">子传父有参数</button>
   <button @click="clickEventWithParamsForm('子传父调用子组件本地方法')">子传父调用子组件本地方法</button>
+
+  <p>响应式数据： {{ props.propsRef }}</p>
 </template>
 
 <style></style>
