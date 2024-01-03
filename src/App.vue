@@ -34,6 +34,8 @@ import Vprovide from "./components/provideinject/Vprovide.vue"
 import Vcomposable from "./components/composable/Vcomposable.vue"
 
 import VAxios from "./components/VAxios.vue"
+
+import VPinia from "./components/VPinia.vue"
 </script>
 
 <template>
@@ -66,8 +68,8 @@ import VAxios from "./components/VAxios.vue"
 
   <!-- props -->
   <!-- 如果需要动态绑定，可以用v-bind，加上:，可以做到响应式绑定 -->
-  <VProps title="父传子" :propsRef="propsRef" :likes="propsLikes" @click-event="callback"
-    @click-event-with-params="callback2" />
+  <!-- <VProps title="父传子" :propsRef="propsRef" :likes="propsLikes" @click-event="callback"
+    @click-event-with-params="callback2" /> -->
 
 
   <!-- 依赖注入 -->
@@ -78,6 +80,8 @@ import VAxios from "./components/VAxios.vue"
 
   <!-- 测试axios -->
   <!-- <VAxios /> -->
+
+  <VPinia />
 </template>
 
 <style scoped></style>
